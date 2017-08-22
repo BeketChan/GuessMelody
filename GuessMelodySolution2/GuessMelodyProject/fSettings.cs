@@ -31,6 +31,8 @@ namespace GuessMelodyProject
         string[] music_list = Directory.GetFiles(fbd.SelectedPath, "*.mp3", cbUseSubFolders.Checked ? SearchOption.AllDirectories : SearchOption.TopDirectoryOnly);
         lbMusicList.Items.Clear();
         lbMusicList.Items.AddRange(music_list);
+        Viktorina.list.Clear();
+        Viktorina.list.AddRange(music_list);
       } 
     }
 
