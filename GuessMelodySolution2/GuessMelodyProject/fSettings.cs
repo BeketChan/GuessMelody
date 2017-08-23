@@ -67,6 +67,7 @@ namespace GuessMelodyProject
       LaodSettings();
       lbMusicList.Items.Clear();
       lbMusicList.Items.AddRange(Viktorina.list.ToArray());
+      lbMusicList.Items.AddRange(Viktorina.list.ToArray());
     }
   }
 }
