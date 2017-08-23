@@ -22,7 +22,8 @@ namespace GuessMelodyProject
 
     private void Form1_Load(object sender, EventArgs e)
     {
-
+      Viktorina.ReadParam();
+      Viktorina.ReadMusic();
     }
 
     private void button1_Click(object sender, EventArgs e)

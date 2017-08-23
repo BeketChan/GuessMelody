@@ -20,6 +20,12 @@ namespace GuessMelodyProject
 
     private void btnSettibgsOK_Click(object sender, EventArgs e)
     {
+      Viktorina.allFolders = cbUseSubFolders.Checked;
+      Viktorina.gameDuration = (int)nudGameDuration.Value;
+      Viktorina.musicDuration = (int)nudMusicDuration.Value;
+      Viktorina.randomStart = cbRandomStart.Checked;
+      
+      Viktorina.WriteParam();
       Hide();
     }
 
@@ -33,17 +39,34 @@ namespace GuessMelodyProject
         lbMusicList.Items.AddRange(music_list);
         Viktorina.list.Clear();
         Viktorina.list.AddRange(music_list);
+        Viktorina.lastFolder = fbd.SelectedPath;
       } 
     }
 
     private void btnSettingsCansel_Click(object sender, EventArgs e)
     {
+      LaodSettings();
       Hide();
+    }
+
+    void LaodSettings()
+    {
+      cbUseSubFolders.Checked = Viktorina.allFolders;
+      nudGameDuration.Value = Viktorina.gameDuration;
+      nudMusicDuration.Value = Viktorina.musicDuration;
+      cbRandomStart.Checked = Viktorina.randomStart;
     }
 
     private void btnClearMusucList_Click(object sender, EventArgs e)
     {
       lbMusicList.Items.Clear();
+    }
+
+    private void fSettings_Load(object sender, EventArgs e)
+    {
+      LaodSettings();
+      lbMusicList.Items.Clear();
+      lbMusicList.Items.AddRange(Viktorina.list.ToArray());
     }
   }
 }
