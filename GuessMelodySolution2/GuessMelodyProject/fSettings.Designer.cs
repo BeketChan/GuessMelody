@@ -40,6 +40,10 @@
       this.nudGameDuration = new System.Windows.Forms.NumericUpDown();
       this.nudMusicDuration = new System.Windows.Forms.NumericUpDown();
       this.cbRandomStart = new System.Windows.Forms.CheckBox();
+      this.label3 = new System.Windows.Forms.Label();
+      this.label4 = new System.Windows.Forms.Label();
+      this.cbPlayer1key = new System.Windows.Forms.ComboBox();
+      this.cbPlayer2key = new System.Windows.Forms.ComboBox();
       ((System.ComponentModel.ISupportInitialize)(this.nudGameDuration)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.nudMusicDuration)).BeginInit();
       this.SuspendLayout();
@@ -159,12 +163,52 @@
       this.cbRandomStart.Checked = true;
       this.cbRandomStart.CheckState = System.Windows.Forms.CheckState.Checked;
       this.cbRandomStart.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-      this.cbRandomStart.Location = new System.Drawing.Point(286, 398);
+      this.cbRandomStart.Location = new System.Drawing.Point(17, 422);
       this.cbRandomStart.Name = "cbRandomStart";
       this.cbRandomStart.Size = new System.Drawing.Size(188, 24);
       this.cbRandomStart.TabIndex = 10;
       this.cbRandomStart.Text = "Со случайного места";
       this.cbRandomStart.UseVisualStyleBackColor = true;
+      // 
+      // label3
+      // 
+      this.label3.AutoSize = true;
+      this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+      this.label3.Location = new System.Drawing.Point(286, 399);
+      this.label3.Name = "label3";
+      this.label3.Size = new System.Drawing.Size(62, 20);
+      this.label3.TabIndex = 12;
+      this.label3.Text = "Игрок2";
+      // 
+      // label4
+      // 
+      this.label4.AutoSize = true;
+      this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+      this.label4.Location = new System.Drawing.Point(286, 372);
+      this.label4.Name = "label4";
+      this.label4.Size = new System.Drawing.Size(62, 20);
+      this.label4.TabIndex = 11;
+      this.label4.Text = "Игрок1";
+      // 
+      // cbPlayer1key
+      // 
+      this.cbPlayer1key.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+      this.cbPlayer1key.FormattingEnabled = true;
+      this.cbPlayer1key.Location = new System.Drawing.Point(355, 372);
+      this.cbPlayer1key.Name = "cbPlayer1key";
+      this.cbPlayer1key.Size = new System.Drawing.Size(40, 24);
+      this.cbPlayer1key.TabIndex = 13;
+      this.cbPlayer1key.Text = "A";
+      // 
+      // cbPlayer2key
+      // 
+      this.cbPlayer2key.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+      this.cbPlayer2key.FormattingEnabled = true;
+      this.cbPlayer2key.Location = new System.Drawing.Point(354, 397);
+      this.cbPlayer2key.Name = "cbPlayer2key";
+      this.cbPlayer2key.Size = new System.Drawing.Size(40, 24);
+      this.cbPlayer2key.TabIndex = 14;
+      this.cbPlayer2key.Text = "P";
       // 
       // fSettings
       // 
@@ -172,6 +216,10 @@
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.BackColor = System.Drawing.SystemColors.ActiveCaption;
       this.ClientSize = new System.Drawing.Size(624, 441);
+      this.Controls.Add(this.cbPlayer2key);
+      this.Controls.Add(this.cbPlayer1key);
+      this.Controls.Add(this.label3);
+      this.Controls.Add(this.label4);
       this.Controls.Add(this.cbRandomStart);
       this.Controls.Add(this.nudMusicDuration);
       this.Controls.Add(this.nudGameDuration);
@@ -185,7 +233,7 @@
       this.Controls.Add(this.lbMusicList);
       this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
       this.Name = "fSettings";
-      this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+      this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
       this.Text = "Настройки";
       this.Load += new System.EventHandler(this.fSettings_Load);
       ((System.ComponentModel.ISupportInitialize)(this.nudGameDuration)).EndInit();
@@ -208,5 +256,9 @@
     private System.Windows.Forms.NumericUpDown nudGameDuration;
     private System.Windows.Forms.NumericUpDown nudMusicDuration;
     private System.Windows.Forms.CheckBox cbRandomStart;
+    private System.Windows.Forms.Label label3;
+    private System.Windows.Forms.Label label4;
+    private System.Windows.Forms.ComboBox cbPlayer1key;
+    private System.Windows.Forms.ComboBox cbPlayer2key;
   }
 }
