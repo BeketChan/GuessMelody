@@ -16,6 +16,7 @@ namespace GuessMelodyProject
     static public bool randomStart = false;
     static public string lastFolder = "";
     static public bool allFolders = false;
+    static public string answer;
 
     static public void ReadMusic()
     {

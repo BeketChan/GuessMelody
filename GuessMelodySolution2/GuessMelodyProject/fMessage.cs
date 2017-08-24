@@ -23,6 +23,7 @@ namespace GuessMelodyProject
     private void fMessage_Load(object sender, EventArgs e)
     {
       timeAnswer = 5;
+      lblTimer.Text = timeAnswer.ToString();
       timer1.Start();
     }
 
@@ -41,6 +42,12 @@ namespace GuessMelodyProject
     private void fMessage_FormClosed(object sender, FormClosedEventArgs e)
     {
       timer1.Stop();
+    }
+
+    private void lblAnsver_Click(object sender, EventArgs e)
+    {
+      var mp3file = TagLib.File.Create(Viktorina.answer);
+      lblAnsver.Text = mp3file.Tag.FirstAlbumArtist + " - " + mp3file.Tag.Title;
     }
   }
 }

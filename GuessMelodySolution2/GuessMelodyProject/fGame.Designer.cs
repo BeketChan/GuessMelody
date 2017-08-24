@@ -108,6 +108,7 @@
       this.lblPlayer1score.Size = new System.Drawing.Size(35, 37);
       this.lblPlayer1score.TabIndex = 5;
       this.lblPlayer1score.Text = "0";
+      this.lblPlayer1score.MouseClick += new System.Windows.Forms.MouseEventHandler(this.lblPlayer1score_MouseClick);
       // 
       // lblPlayer2score
       // 
@@ -118,6 +119,7 @@
       this.lblPlayer2score.Size = new System.Drawing.Size(35, 37);
       this.lblPlayer2score.TabIndex = 7;
       this.lblPlayer2score.Text = "0";
+      this.lblPlayer2score.MouseClick += new System.Windows.Forms.MouseEventHandler(this.lblPlayer1score_MouseClick);
       // 
       // label3
       // 

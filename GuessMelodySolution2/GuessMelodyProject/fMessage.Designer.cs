@@ -34,6 +34,7 @@
       this.btnMessageNo = new System.Windows.Forms.Button();
       this.timer1 = new System.Windows.Forms.Timer(this.components);
       this.lblTimer = new System.Windows.Forms.Label();
+      this.lblAnsver = new System.Windows.Forms.Label();
       this.SuspendLayout();
       // 
       // lbMessagePlayerNo
@@ -83,12 +84,24 @@
       this.lblTimer.TabIndex = 4;
       this.lblTimer.Text = "0";
       // 
+      // lblAnsver
+      // 
+      this.lblAnsver.AutoSize = true;
+      this.lblAnsver.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
+      this.lblAnsver.Location = new System.Drawing.Point(12, 283);
+      this.lblAnsver.Name = "lblAnsver";
+      this.lblAnsver.Size = new System.Drawing.Size(170, 26);
+      this.lblAnsver.TabIndex = 5;
+      this.lblAnsver.Text = "Показать ответ";
+      this.lblAnsver.Click += new System.EventHandler(this.lblAnsver_Click);
+      // 
       // fMessage
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.BackColor = System.Drawing.SystemColors.ActiveCaption;
       this.ClientSize = new System.Drawing.Size(624, 441);
+      this.Controls.Add(this.lblAnsver);
       this.Controls.Add(this.lblTimer);
       this.Controls.Add(this.btnMessageNo);
       this.Controls.Add(this.btnMessageYes);
@@ -109,5 +122,6 @@
     public System.Windows.Forms.Label lbMessagePlayerNo;
     private System.Windows.Forms.Timer timer1;
     public System.Windows.Forms.Label lblTimer;
+    public System.Windows.Forms.Label lblAnsver;
   }
 }

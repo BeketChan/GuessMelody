@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace GuessMelodyProject
 {
@@ -14,6 +15,7 @@ namespace GuessMelodyProject
   {
     Random rnd = new Random();
     int musicDuration = Viktorina.musicDuration;
+    bool[] players = new bool[2];
 
     public fGame()
     {
@@ -26,9 +28,12 @@ namespace GuessMelodyProject
       musicDuration = Viktorina.musicDuration;
       int n = rnd.Next(0, Viktorina.list.Count - 1);
       WMP.URL = Viktorina.list[n];
+      Viktorina.answer = WMP.URL;
       WMP.Ctlcontrols.play();
       Viktorina.list.RemoveAt(n);
       lblGameMusicQty.Text = Viktorina.list.Count.ToString();
+      players[0] = false;
+      players[1] = false;
     }
 
     private void btnGameNext_Click(object sender, EventArgs e)
@@ -95,9 +100,11 @@ namespace GuessMelodyProject
 
     private void fGame_KeyDown(object sender, KeyEventArgs e)
     {
-      if (e.KeyData == Keys.A)
+      if (!timer1.Enabled) return;
+      if (players[0] == false && e.KeyData == Keys.A)
       {
         GamePause();
+        players[0] = true;
         fMessage fm = new fMessage();
         fm.lbMessagePlayerNo.Text = "Игрок 1";
         if (fm.ShowDialog() == DialogResult.Yes)
@@ -107,9 +114,10 @@ namespace GuessMelodyProject
         }
         GamePlay();
       }
-      if (e.KeyData == Keys.P)
+      if (players[1] == false && e.KeyData == Keys.P)
       {
         GamePause();
+        players[1] = true;
         fMessage fm = new fMessage();
         fm.lbMessagePlayerNo.Text = "Игрок 2";
         if (fm.ShowDialog() == DialogResult.Yes)
@@ -126,5 +134,12 @@ namespace GuessMelodyProject
       if (Viktorina.randomStart && (WMP.openState == WMPLib.WMPOpenState.wmposMediaOpen))
         WMP.Ctlcontrols.currentPosition = rnd.Next(0, (int)WMP.currentMedia.duration - Viktorina.musicDuration);
     }
+
+    private void lblPlayer1score_MouseClick(object sender, MouseEventArgs e)
+    {
+      if (e.Button == MouseButtons.Left) (sender as Label).Text = Convert.ToString(Convert.ToInt32((sender as Label).Text) + 1);
+      if (e.Button == MouseButtons.Right) (sender as Label).Text = Convert.ToString(Convert.ToInt32((sender as Label).Text) - 1);
+    }
+    
   }
 }
